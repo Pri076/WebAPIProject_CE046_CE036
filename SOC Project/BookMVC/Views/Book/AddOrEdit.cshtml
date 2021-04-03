@@ -1,0 +1,37 @@
+﻿@model BookMVC.Models.mvcBookModel
+@{
+    ViewBag.Title = "AddOrEdit";
+}
+
+<div class="form-body">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.StudentID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name)
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BookName)
+            @Html.EditorFor(model => model.BookName)
+            @Html.ValidationMessageFor(model => model.BookName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AuthorName)
+            @Html.EditorFor(model => model.AuthorName)
+            @Html.ValidationMessageFor(model => model.AuthorName)
+        </div>
+
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn button" />
+            <input type="reset" value="Reset" class="btn button" />
+        </div>
+    }
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+}
